@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -60,7 +61,7 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Móveis',
                     style: GoogleFonts.roboto(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                        fontSize: 16, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
@@ -82,7 +83,7 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Jogos',
                     style: GoogleFonts.roboto(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                        fontSize: 16, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
@@ -104,7 +105,7 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Eletrônicos',
                     style: GoogleFonts.roboto(
-                        fontSize: 16, fontWeight: FontWeight.bold),
+                        fontSize: 16, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
@@ -126,7 +127,7 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Comida',
                     style: GoogleFonts.roboto(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                        fontSize: 16, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
@@ -148,7 +149,7 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Calçados',
                     style: GoogleFonts.roboto(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                        fontSize: 16, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
@@ -166,8 +167,66 @@ class HomePage extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 24,
+            height: 30,
           ),
+          Row(
+            children: [
+              const Padding(padding: EdgeInsets.all(8)),
+              Text('Principais produtos',
+                  style: GoogleFonts.roboto(
+                      fontSize: 22, fontWeight: FontWeight.bold)),
+              const Spacer(),
+              Text('Ver todos',
+                  style: GoogleFonts.roboto(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.grey)),
+              const Padding(padding: EdgeInsets.all(8))
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              Card(
+                margin: const EdgeInsets.all(8),
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Image.asset('assets/cadeira.jpg', width: 150, height: 200),
+                    Text(
+                      'Cadeira Escritório',
+                      style: GoogleFonts.roboto(
+                          fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                    RatingBar.builder(
+                      itemSize: 15,
+                      initialRating: 4.5,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      onRatingUpdate: (rating) {},
+                    ),
+                    Text(
+                      'R\$700,00',
+                      style: GoogleFonts.roboto(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepOrange),
+                          
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
         ],
       ),
     );

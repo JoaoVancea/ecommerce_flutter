@@ -1,3 +1,4 @@
+import 'package:ecommerce_flutter/produto.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -173,7 +174,7 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         )),
                     Text(
-                      'Vestimenta',
+                      'Roupas',
                       style: GoogleFonts.roboto(
                           fontSize: 16, fontWeight: FontWeight.w500),
                     )
@@ -345,41 +346,44 @@ class HomePage extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Card(
-                  margin: const EdgeInsets.all(8),
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      Image.asset('assets/sofaL.png',
-                          width: 150, height: 200),
-                      Text(
-                        'Sofá em L',
-                        style: GoogleFonts.roboto(
-                            fontSize: 18, fontWeight: FontWeight.w600),
-                      ),
-                      RatingBar.builder(
-                        itemSize: 15,
-                        initialRating: 4.5,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemPadding:
-                            const EdgeInsets.symmetric(horizontal: 4.0),
-                        itemBuilder: (context, _) => const Icon(
-                          Icons.star,
-                          color: Colors.amber,
+                GestureDetector(
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (_)=> const Produto())),
+                  child: Card(
+                    margin: const EdgeInsets.all(8),
+                    color: Colors.white,
+                    child: Column(
+                      children: [
+                        Image.asset('assets/sofaL.png',
+                            width: 150, height: 200),
+                        Text(
+                          'Sofá em L',
+                          style: GoogleFonts.roboto(
+                              fontSize: 18, fontWeight: FontWeight.w600),
                         ),
-                        onRatingUpdate: (rating) {},
-                      ),
-                      Text(
-                        'R\$3000,00',
-                        style: GoogleFonts.roboto(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepOrange),
-                      )
-                    ],
+                        RatingBar.builder(
+                          itemSize: 15,
+                          initialRating: 4.5,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding:
+                              const EdgeInsets.symmetric(horizontal: 4.0),
+                          itemBuilder: (context, _) => const Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (rating) {},
+                        ),
+                        Text(
+                          'R\$3000,00',
+                          style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.deepOrange),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Card(

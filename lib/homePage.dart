@@ -468,6 +468,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-//https://dribbble.com/shots/23146588-eCommerce-Mobile-App
-//https://dribbble.com/shots/15336959-Ecommerce-app-design/attachments/7095951?mode=media

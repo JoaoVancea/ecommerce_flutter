@@ -153,6 +153,39 @@ class _ProdutoState extends State<Produto> {
           ],
         )
       ]),
+      bottomNavigationBar: SizedBox(
+        height: 70,
+        child: Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.deepOrange),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(50)),
+              child: Text('Adicionar ao carrinho',
+                  style: GoogleFonts.roboto(
+                      fontSize: 16, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Container(
+              margin: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                  color: Colors.deepOrange,
+                  borderRadius: BorderRadius.circular(50)),
+              child: Text('Comprar agora',
+                  style: GoogleFonts.roboto(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
